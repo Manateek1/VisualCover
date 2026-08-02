@@ -293,7 +293,10 @@ fn set_autostart(app: &AppHandle, enabled: bool) -> AppResult<()> {
             Ok(()) => Ok(()),
             Err(error) => {
                 let msg = error.to_string();
-                if msg.contains("cannot find") || msg.contains("os error 2") || msg.contains("NotFound") {
+                if msg.contains("cannot find")
+                    || msg.contains("os error 2")
+                    || msg.contains("NotFound")
+                {
                     Ok(())
                 } else {
                     Err(AppError::Native(msg))
