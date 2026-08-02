@@ -8,7 +8,7 @@ published 0.1.x release and the `main` branch.
 ## Reporting a vulnerability
 
 Please use GitHub's private
-[security-advisory form](https://github.com/Manateek1/visual-cover/security/advisories/new).
+[security-advisory form](https://github.com/Manateek1/VisualCover/security/advisories/new).
 Do not open a public issue for a vulnerability that could expose a user's PIN
 hash, bypass an authenticated in-app action unexpectedly, or enable unintended
 code execution.

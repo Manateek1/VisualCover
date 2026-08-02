@@ -55,7 +55,7 @@ in the [fidelity ledger](docs/VISUAL-FIDELITY-LEDGER.md).
 ### From a release
 
 1. Open the repository's
-   [latest release](https://github.com/Manateek1/visual-cover/releases/latest).
+   [latest release](https://github.com/Manateek1/VisualCover/releases/latest).
 2. Download `VisualCover_0.1.0_x64-setup.exe` from **Assets**.
 3. Run the installer. It installs for the current user; administrator access is
    not normally required. If WebView2 is absent, the installer downloads the

@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Report a security vulnerability
-    url: https://github.com/Manateek1/visual-cover/security/advisories/new
+    url: https://github.com/Manateek1/VisualCover/security/advisories/new
     about: Report PIN, authentication, persistence, or code-execution issues privately.
