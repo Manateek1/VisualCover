@@ -277,18 +277,30 @@ async fn save_config_async(store: ConfigStore, config: StoredConfig) -> AppResul
 }
 
 fn autostart_enabled(app: &AppHandle) -> AppResult<bool> {
-    app.autolaunch()
-        .is_enabled()
-        .map_err(|error| AppError::Native(error.to_string()))
+    match app.autolaunch().is_enabled() {
+        Ok(enabled) => Ok(enabled),
+        Err(_) => Ok(false),
+    }
 }
 
 fn set_autostart(app: &AppHandle, enabled: bool) -> AppResult<()> {
-    let result = if enabled {
-        app.autolaunch().enable()
+    if enabled {
+        app.autolaunch()
+            .enable()
+            .map_err(|error| AppError::Native(error.to_string()))
     } else {
-        app.autolaunch().disable()
-    };
-    result.map_err(|error| AppError::Native(error.to_string()))
+        match app.autolaunch().disable() {
+            Ok(()) => Ok(()),
+            Err(error) => {
+                let msg = error.to_string();
+                if msg.contains("cannot find") || msg.contains("os error 2") || msg.contains("NotFound") {
+                    Ok(())
+                } else {
+                    Err(AppError::Native(msg))
+                }
+            }
+        }
+    }
 }
 
 #[tauri::command]
