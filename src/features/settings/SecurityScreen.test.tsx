@@ -67,7 +67,7 @@ describe("security settings", () => {
     const configure = vi.fn(async () => undefined);
     const { rerender } = render(
       <SecurityScreen
-        settings={DEFAULT_SETTINGS}
+        settings={{ ...DEFAULT_SETTINGS, emergencyUnlock: { enabled: false, shortcut: "Ctrl+Alt+Shift+U" } }}
         onChangePin={vi.fn(async () => undefined)}
         onConfigureEmergencyUnlock={configure}
       />,

@@ -70,7 +70,7 @@ export const DEFAULT_SETTINGS: PublicSettings = {
   idleMinutes: null,
   compatibilityMode: true,
   emergencyUnlock: {
-    enabled: false,
+    enabled: true,
     shortcut: "Ctrl+Alt+Shift+U",
   },
 };

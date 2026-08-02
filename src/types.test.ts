@@ -22,7 +22,7 @@ describe("settings defaults", () => {
       coverAfterLaunch: false,
       idleMinutes: null,
       compatibilityMode: true,
-      emergencyUnlock: { enabled: false, shortcut: "Ctrl+Alt+Shift+U" },
+      emergencyUnlock: { enabled: true, shortcut: "Ctrl+Alt+Shift+U" },
     });
     expect(DEFAULT_SETTINGS.background).toEqual({
       kind: "gradient",

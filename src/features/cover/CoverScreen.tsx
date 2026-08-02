@@ -70,6 +70,19 @@ export function CoverScreen({ settings, context }: CoverScreenProps) {
         event.stopImmediatePropagation();
         return;
       }
+      if (
+        settings.emergencyUnlock.enabled &&
+        (event.ctrlKey || event.metaKey) &&
+        event.altKey &&
+        event.shiftKey &&
+        (event.key.toUpperCase() === "U" || event.code === "KeyU")
+      ) {
+        event.preventDefault();
+        if (!native.isNative) {
+          setUnlockedInPreview(true);
+        }
+        return;
+      }
       if (!context.primary) return;
       if (settings.pinVisibility === "interaction" && !promptVisible) {
         if (/^\d$/.test(event.key)) {
@@ -83,7 +96,7 @@ export function CoverScreen({ settings, context }: CoverScreenProps) {
     };
     window.addEventListener("keydown", onKeyDown, true);
     return () => window.removeEventListener("keydown", onKeyDown, true);
-  }, [context.primary, promptVisible, revealPrompt, settings.pinVisibility]);
+  }, [context.primary, native, promptVisible, revealPrompt, settings.emergencyUnlock.enabled, settings.pinVisibility]);
 
   useEffect(() => () => {
     window.clearTimeout(hideTimer.current);

@@ -120,7 +120,7 @@ impl Default for PublicSettings {
             idle_minutes: None,
             compatibility_mode: true,
             emergency_unlock: EmergencyUnlockConfig {
-                enabled: false,
+                enabled: true,
                 shortcut: DEFAULT_EMERGENCY_SHORTCUT.into(),
             },
         }
