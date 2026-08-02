@@ -1,0 +1,70 @@
+name: Bug report
+description: Report a reproducible VisualCover problem.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        VisualCover is a visual curtain, not the Windows lock screen. Remove PINs, credentials, app-data files, private messages, and unrelated desktop content from all evidence. Use the private security-advisory link for sensitive reports.
+  - type: input
+    id: version
+    attributes:
+      label: VisualCover version
+      description: Include the release version and commit when known.
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows 11 installed release
+        - Windows 11 development build
+        - macOS development build
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS build, monitor count, resolutions, scaling, primary display, and compatibility-mode state when relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Give the smallest reliable sequence, starting from Covered or Uncovered state.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence
+      description: Add relevant screenshots or logs only after removing sensitive data.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues for this problem.
+          required: true
+        - label: I removed PINs, credentials, private messages, and personal desktop content.
+          required: true
+        - label: I understand that documented visual-cover limitations are not operating-system security bugs.
+          required: true

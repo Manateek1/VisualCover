@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose a focused improvement that preserves VisualCover's visual-only model.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What concrete user problem should VisualCover solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the user-visible result, including Covered and Uncovered behavior where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Explain current workarounds or simpler options.
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Background-automation impact
+      description: Explain possible effects on Chrome, Playwright, Python, scheduled tasks, focus, or multi-monitor behavior.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Product boundaries
+      options:
+        - label: This proposal keeps VisualCover a visual privacy cover rather than a replacement for Windows authentication.
+          required: true
+        - label: This proposal does not require a master PIN, system-wide input blocking, analytics, or a cloud account.
+          required: true
