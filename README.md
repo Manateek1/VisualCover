@@ -9,8 +9,7 @@ signed in and ordinary background programs continue running.
 > It is a casual-access barrier that can hide the desktop from a passerby. Use
 > the real Windows lock screen whenever you need operating-system security.
 
-Version 0.1.0 targets 64-bit Windows 11. macOS is supported as a development
-environment with graceful fallbacks for Windows-only behavior.
+Version 0.2.0 supports 64-bit Windows 11 and macOS (Apple Silicon / Intel).
 
 ## What it does
 
@@ -19,48 +18,26 @@ environment with graceful fallbacks for Windows-only behavior.
 - Requires the locally configured 4–12 digit PIN to uncover the desktop.
 - Stores only an Argon2id PIN hash in the current user's app-data directory.
 - Supports launch at sign-in, optional cover-after-launch, optional Windows
-  idle activation, a tray menu, and an opt-in emergency unlock shortcut.
-- Leaves the current Windows session and background applications running.
+  idle activation, a tray menu, and a built-in emergency unlock shortcut (`Ctrl+Alt+Shift+U`).
+- Leaves current session background applications and automation scripts running.
 
-VisualCover does not lock Windows, switch users, create another desktop
-session, suspend applications, block the network, install system-wide
-input-blocking hooks, or stop synthetic input globally. Its optional emergency
-shortcut is a registered
-hotkey, not a system-wide input blocker. It does not try to imitate Windows
-branding.
+## Downloads and Installation
 
-## Development screenshots
-
-These captures show the implemented release candidate running through its
-bundled, test-only native bridge on macOS at 1586×992. They contain no private
-desktop data and are visual-development evidence, not proof of Windows hardware
-behavior.
-
-| Main control | Primary cover |
-| --- | --- |
-| ![VisualCover main control window on macOS](docs/screenshots/control-macos.png) | ![VisualCover primary monitor cover on macOS](docs/screenshots/cover-primary-macos.png) |
-
-| Create PIN | Appearance |
-| --- | --- |
-| ![VisualCover Create PIN onboarding step on macOS](docs/screenshots/onboarding-pin-macos.png) | ![VisualCover Appearance settings on macOS](docs/screenshots/appearance-macos.png) |
-
-The six approved concepts remain unchanged in
-[`docs/design/approved`](docs/design/approved). Current primary/secondary cover,
-Welcome, Behavior, and Security captures are in
-[`docs/screenshots`](docs/screenshots). The concept-to-runtime review is recorded
-in the [fidelity ledger](docs/VISUAL-FIDELITY-LEDGER.md).
-
-## Install on Windows
-
-### From a release
+### Windows
 
 1. Open the repository's
    [latest release](https://github.com/Manateek1/VisualCover/releases/latest).
-2. Download `VisualCover_0.1.0_x64-setup.exe` from **Assets**.
-3. Run the installer. It installs for the current user; administrator access is
-   not normally required. If WebView2 is absent, the installer downloads the
-   Microsoft WebView2 runtime, so that first install needs internet access.
-4. Start **VisualCover** from the Start menu and complete the short setup.
+2. Download `VisualCover_0.2.0_x64-setup.exe` from **Assets**.
+3. Run the installer to install VisualCover on Windows.
+4. Launch **VisualCover** from the Start Menu and complete the short setup.
+
+### macOS
+
+1. Open the repository's
+   [latest release](https://github.com/Manateek1/VisualCover/releases/latest).
+2. Download `VisualCover_0.2.0_aarch64.dmg` (or `.dmg` / `.app`) from **Assets**.
+3. Double-click the `.dmg` file and drag **VisualCover** into your Applications folder.
+4. Launch **VisualCover** from Applications!
 
 VisualCover 0.1.0 is unsigned. Windows SmartScreen may show **Windows protected
 your PC**. Confirm that the file came from this repository, choose **More

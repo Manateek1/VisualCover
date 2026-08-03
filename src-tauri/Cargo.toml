@@ -1,7 +1,7 @@
 [package]
 name = "visual-cover"
-version = "0.1.0"
-description = "A visual privacy cover for Windows"
+version = "0.2.0"
+description = "A visual privacy cover for Windows and macOS"
 authors = ["Dillon Nagar"]
 edition = "2024"
 rust-version = "1.97.1"

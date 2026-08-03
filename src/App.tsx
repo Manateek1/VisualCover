@@ -76,7 +76,7 @@ export default function App() {
   const completeSetup = async (pin: string, settings: PublicSettings) => {
     await native.completeSetup(pin, settings);
     setBootstrap((current) => ({
-      version: current?.version ?? "0.1.0",
+      version: current?.version ?? "0.2.0",
       platform: current?.platform ?? "macos",
       setupRequired: false,
       lifecycle: "uncovered",
